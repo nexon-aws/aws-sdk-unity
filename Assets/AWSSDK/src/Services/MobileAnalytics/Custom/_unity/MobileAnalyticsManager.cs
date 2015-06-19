@@ -305,8 +305,10 @@ namespace Amazon.MobileAnalytics.MobileAnalyticsManager
 
         #region internal
         internal Session Session {get;private set;}
-        
-        internal ClientContext ClientContext {get;private set;}
+
+		internal static string customEndPoint { get; set;}
+
+		internal ClientContext ClientContext {get;private set;}
         
         internal IDeliveryClient BackgroundDeliveryClient{get;private set;}
         

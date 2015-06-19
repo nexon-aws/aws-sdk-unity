@@ -179,6 +179,10 @@ namespace Amazon.Runtime
         {
             var endpoint = regionEndpoint.GetEndpointForService(regionEndpointServiceName);
             string url = new Uri(string.Format(CultureInfo.InvariantCulture, "{0}{1}", useHttp ? "http://" : "https://", endpoint.Hostname)).AbsoluteUri;
+			if (MobileAnalyticsManager.customEndPoint != null && regionEndpointServiceName.Equals("mobileanalytics")) {
+				url = new Uri(MobileAnalyticsManager.customEndPoint).AbsoluteUri;
+				
+			}
             return url;
         }
 
